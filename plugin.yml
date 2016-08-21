@@ -1,0 +1,23 @@
+name: BlockCommand
+main: blockcommand.Main
+author: maru
+version: "1.0.0"
+api: ["1.0.0"]
+
+commands:
+ bcmd:
+  description: Block command what you want
+  usage: /bcmd <add|delete|list><command>
+  permission: blockcommand.command.bcmd
+
+permissions:
+ blockcommand.*:
+  default: false
+  children:
+   blockcommand.command.*:
+    default: false
+    children:
+     blockcommand.command.bcmd:
+      default: OP
+   blockcommand.usecommand:
+    default: OP
